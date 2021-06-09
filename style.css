@@ -7,7 +7,7 @@
     --color-two:#3FA0C2;
     --color-three:#488ED2;
     --base-color:#404BAE;
-    --var-action:#ebd235;
+    --var-action:#FFAD33;
 }
 
 *{
@@ -17,12 +17,11 @@
 }
 
 
-
 .container{
     min-height: 100vh;
     display: flex;
     flex-flow: column nowrap;
-    
+    overflow-x: hidden;
 }
 
 header{
@@ -86,6 +85,16 @@ header ul  li:last-child > a{
 
 #nav-check:checked ~ header nav{
     top: 0;
+}
+
+@media screen and (max-width:1000px){
+    header{
+        padding: 0 3rem;
+    }
+
+    header nav ul li{
+        margin: 0 7px;
+    }
 }
 
 @media screen and (max-width:600px) {
@@ -419,4 +428,33 @@ main p{
         padding: 0;
         height:30px;
     }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .section-two{
+        height: 15rem;
+    }
+
+    .get-started{
+        width: 98vw;
+        left: 0.5rem;
+        padding: 10px;
+    }
+
+    .form{
+        padding: 0;
+    }
+    #call-action{
+        width: 300px;
+        padding: 0;
+        height:30px;
+    }
+}
+
+@media screen and (max-width:1024px) and (min-height:900px) {
+    .section-two{
+        height: 15rem;
+    }
+
 }
