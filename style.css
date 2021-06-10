@@ -17,6 +17,7 @@
 }
 
 
+
 .container{
     min-height: 100vh;
     display: flex;
@@ -95,24 +96,31 @@ header ul  li:last-child > a{
     header nav ul li{
         margin: 0 7px;
     }
+
 }
 
 @media screen and (max-width:600px) {
     header{
         flex-flow: column nowrap;
         height: 50vh;
-        border: 1px solid red;
         padding: 0;
         align-items: flex-start;
         position: relative;
+        margin: 0;
+        background: linear-gradient(rgba(255, 255, 225,0.5) 20%,rgba(255, 255, 225,0.5) 10%,rgba(0,0,0,0.5) 70%),url("./media/pexels-fauxels-3183197.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+
     }
     .design{
         display: block;
-        border-top: 100px solid red;
-        border-left: 100vw solid transparent;
+        border-top: 100px solid transparent;
+        border-left: 100vw solid var(--base-color);
         width: 0;
         height: 0;
         margin-top: auto;
+
     }
 
     .hidden{
@@ -140,9 +148,10 @@ header ul  li:last-child > a{
         width: 40px;
     }
     header .triangle{
-        border-top: 15px solid black;
+        border-top: 15px solid var(--base-color);
         border-left: 15px solid transparent;
         border-right: 15px solid transparent;
+
     }
 
 
@@ -151,13 +160,14 @@ header ul  li:last-child > a{
         width: 93%;
     }
     header nav{
-        top: -300px;
+        top: -500px;
         right: 0;
         position: absolute;
         height: 40vh;
         width: 40%;
         background-color: #fff;
         transition: top 0.5s ease-out;
+        border: 1px solid #404bae4d;
     }
     header nav ul{
         height: 80%;
@@ -309,7 +319,7 @@ main p{
 
 .section-three{
     position: relative;
-    height: calc(90vh - 23rem);
+    min-height: 50vh;
     background-color: var(--base-color);
 
 }
@@ -322,8 +332,8 @@ main p{
 }
 .get-started{
     position: absolute;
-    width: 92vw;
-    height: 20vh;
+    /* width: 92vw; */
+    min-height: 20vh;
     top:4rem;
     left: 3rem;
     display: flex;
@@ -450,6 +460,22 @@ main p{
         padding: 0;
         height:30px;
     }
+
+    .form{
+        padding-top: 1rem;
+    }
+    .fill{
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem initial;
+    }
+
+    #call-action{
+        width: initial;
+        height: initial;
+        padding: 6px 40px;
+        border-radius: 10px;
+    }
 }
 
 @media screen and (max-width:1024px) and (min-height:900px) {
@@ -457,4 +483,120 @@ main p{
         height: 15rem;
     }
 
+}
+
+@media screen and (max-width:600px) {
+    .section-one{
+        background-color: var(--base-color);
+        border: 1px solid var(--base-color);
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
+    .brand-voice{
+        width:100%;
+        justify-content: space-evenly;
+    }
+    .brand-voice h1{
+        color: inherit;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+    .section-two{
+        flex-direction: column;
+        height: auto;
+        padding: 2rem;
+
+    }
+
+    .section-two .icon-desc{
+        margin: 0 0 3rem 0;
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid rgba(0,0,0,0.3);
+        position: relative;
+        background: #fff;
+    }
+
+    .section-two .icon-desc::before, .section-two .icon-desc::after{
+        content: "";
+        width: 50%;
+        position: absolute;
+        top:70%;
+        left:0px;
+        bottom: 25px;
+        z-index: -1;
+        box-shadow: 0px 40px 30px #777;
+        transform: rotate(-8deg);
+    }
+
+    .section-two .icon-desc::after{
+        transform: rotate(8deg);
+        left: auto;
+        right: 10px;
+    }
+
+    .section-three{
+        height: auto;
+    }
+
+    .section-three .triangle{
+        border: 0;
+    }
+    .get-started{
+        padding: 0;
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        justify-content: space-evenly;
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .note{
+        width: auto;
+        order: 2;
+        margin: 20px 5px 5px 5px;
+        background-color: #fff;
+        padding: 3px 10px;
+        min-height: 11rem;
+    }
+    .note *{
+        text-align: initial;
+    }
+
+    .form{
+        width: 100%;
+        order: 1;
+        min-height: 10rem;
+        margin-top: 3.5rem;
+    }
+
+    .fill{
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: initial;
+        padding: 8px;  
+        margin: 0;
+    }
+
+    .fill .inner-input{
+        justify-content: space-evenly;
+    }
+
+    .fill label{
+        font-size: 1rem;
+        margin-bottom: 5px;
+        color: #fff;
+    }
+    .fill input{
+        height: 2rem;
+    }
+    #call-action{
+        width: initial;
+        height: initial;
+        padding: 10px 40px;
+        border-radius: 10px;
+    }
 }
